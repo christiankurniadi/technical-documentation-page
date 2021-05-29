@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SASS Documentation</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" alt="sass-logo" />
+      </div>
+    </header>
+    <div class="flex-wrapper">
+      <nav id="navbar">
+        <header>Sass Operators</header>
+        <ul>
+          <li><a class="nav-link" href="#Operators">Operators</a></li>
+          <li><a class="nav-link" href="#Equality_Operators">Equality Operators</a></li>
+          <li><a class="nav-link" href="#Relational_Operators">Relational Operators</a></li>
+          <li><a class="nav-link" href="#Numeric_Operators">Numeric Operators</a></li>
+          <li><a class="nav-link" href="#String_Operators">String Operators</a></li>
+          <li><a class="nav-link" href="#Boolean_Operators">Boolean Operators</a></li>
+        </ul>
+      </nav>
+      <main id="main-doc">
+        <section id="Operators" class="main-section">
+          <header class="first-header">Operators</header>
+          <p>Sass supports a handful of useful <code>operators</code> for working with different values. These include the standard mathematical operators like <code>+</code> and <code>*</code>, as well as operators for various other types:</p>
+          <ul>
+            <li><code>==</code> and <code>!=</code> are used to check if two values are the same.</li>
+            <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>%</code> have their usual mathematical meaning for numbers, with special behaviour for units that matches the use of units in scientific math.</li>
+            <li><code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, and <code>&gt;=</code> check whether two numbers are greater or less than one another</li>
+            <li><code>and</code>, <code>or</code>, and <code>not</code> have the usual boolean behaviour, Sass consider every value "true" except for <code>false</code> and <code>null</code>.</li>
+            <li><code>+</code>, <code>-</code>, and <code>/</code> can be used to concatenate strings.</li>
+          </ul>
+          <section class="sub-section">
+            <header>Order of Operations</header>
+            <p>Sass has a pretty standard order of operations, from tightest to loosest:</p>
+            <ol>
+              <li>The unary operators <code>not</code>, <code>+</code>, <code>-</code>, and <code>/</code>.</li>
+              <li>The <code>*</code>, <code>/</code>, and <code>%</code> operators.</li>
+              <li>The <code>+</code> and <code>-</code> operators.</li>
+              <li>The <code>&gt;</code>, <code>&gt=;</code>, <code>&lt;</code> and <code>&lt;=</code> operators.</li>
+              <li>The <code>==</code> and <code>!=</code> operators.</li>
+              <li>The <code>and</code> operator.</li>
+              <li>The <code>or</code> operator.</li>
+              <li>The <code>=</code> operator, when it’s available.</li>
+            </ol>
+          </section>
+          <section class="sub-section">
+            <header>Parentheses</header>
+            <p>You can explicitly control the order of operations using parentheses. An operation inside parentheses is always evaluated before any operations outside of them. Parentheses can even be nested, in which case the innermost parentheses will be evaluated first.</p>
+          </section>
+        </section>
+
+        <section id="Equality_Operators" class="main-section">
+          <header>Equality Operators</header>
+          <p>
+            The equality operators return whether or not two values are the same. They’re written <code>&lt;expression&gt; == &lt;expression&gt;</code>, which returns whether two expressions are equal, and <code>&lt;expression&gt; != &lt;expression&gt;</code>, which returns whether two expressions are <em>not</em> equal. Two values are considered equal if they’re the same type <em>and</em> the
+            same value, which means different things for different types:
+          </p>
+          <ul>
+            <li>Numbers are equal if they have the same value <em>and</em> the same units, or if their values are equal when their units are converted between one another.</li>
+            <li>Strings are unusual in that unquoted and quoted strings with the same contents are considered equal.</li>
+            <li>Colors are equal if they have the same red, green, blue, and alpha values.</li>
+            <li>Lists are equal if their contents are equal. Comma-separated lists aren’t equal to space-separated lists, and bracketed lists aren’t equal to unbracketed lists.</li>
+            <li>Maps are equal if their keys and values are both equal.</li>
+            <li><code>true</code>, <code>false</code>, and <code>null</code> are only equal to themselves.</li>
+            <li>Functions are equal to the same function. Functions are compared <em>by reference</em>, so even if two functions have the same name and definition they’re considered different if they aren’t defined in the same place.</li>
+          </ul>
+        </section>
+
+        <section id="Relational_Operators" class="main-section">
+          <header>Relational Operators</header>
+          <p>Relational operators determine whether numbers are larger or smaller than one another. They automatically convert between compatible units.</p>
+          <ul>
+            <li><code>&lt;expression&gt; &lt; &lt;expression&gt;</code> returns whether the first expression's value is less than the second's.</li>
+            <li><code>&lt;expression&gt; &lt;= &lt;expression&gt;</code> returns whether the first expression’s value is less than or equal to the second’s.</li>
+            <li><code>&lt;expression&gt; &gt; &lt;expression&gt;</code> returns whether the first expression’s value is greater than to the second’s.</li>
+            <li><code>&lt;expression&gt; &gt;= &lt;expression&gt;</code> returns whether the first expression’s value is greater than or equal to the second’s.</li>
+          </ul>
+        </section>
+
+        <section id="Numeric_Operators" class="main-section">
+          <header>Numeric Operators</header>
+          <p>Sass supports the standard set of mathematical operators for numbers. They automatically convert between compatible units.</p>
+          <ul>
+            <li><code>&lt;expression&gt; + &lt;expression&gt;</code> adds the first expression’s value to the second’s.</li>
+            <li><code>&lt;expression&gt; - &lt;expression&gt;</code> subtracts the first expression’s value from the second’s.</li>
+            <li><code>&lt;expression&gt; * &lt;expression&gt;</code> multiplies the first expression’s value by the second’s.</li>
+            <li><code>&lt;expression&gt; % &lt;expression&gt;</code> returns the remainder of the first expression’s value divided by the second’s. This is known as the <em>modulo</em> operator.</li>
+          </ul>
+        </section>
+
+        <section id="String_Operators" class="main-section">
+          <header>String Operators</header>
+          <p>Sass supports a few operators that generate strings:</p>
+          <ul>
+            <li><code>&lt;expression&gt; + &lt;expression&gt;</code> returns a string that contains both expressions’ values. If the either value is a quoted string, the result will be quoted; otherwise, it will be unquoted.</li>
+            <li><code>&lt;expression&gt; - &lt;expression&gt;</code> returns an unquoted string that contains both expressions’ values, separated by <code>-</code>. This is a legacy operator, and interpolation should generally be used instead.</li>
+          </ul>
+        </section>
+
+        <section id="Boolean_Operators" class="main-section">
+          <header>Boolean Operators</header>
+          <p>Unlike languages like JavaScript, Sass uses words rather than symbols for its boolean operators.</p>
+          <ul>
+            <li><code>not &lt;expression&gt;</code> returns the opposite of the expression’s value: it turns <code>true</code> into <code>false</code> and <code>false</code> into <code>true</code>.</li>
+            <li><code>&lt;expression&gt; and &lt;expression&gt;</code> returns <code>true</code> if <em>both</em> expressions’ values are <code>true</code>, and <code>false</code> if either is <code>false</code>.</li>
+            <li><code>&lt;expression&gt; or &lt;expression&gt;</code> returns <code>true</code> if either expression’s value is <code>true</code>, and <code>false</code> if both are <code>false</code>.</li>
+          </ul>
+          <section class="sub-section">
+            <header>Truthiness and Falsiness</header>
+            <p>
+              Anywhere <code>true</code> or <code>false</code> are allowed, you can use other values as well. The values <code>false</code> and <code>null</code> are <em>falsey</em>, which means Sass considers them to indicate falsehood and cause conditions to fail. Every other value is considered <code>truthy</code>, so Sass considers them to work like <code>true</code> and cause conditions to
+              succeed.
+            </p>
+            <p>For example, if you want to check if a string contains a space, you can just write <code>string.index($string, " ")</code>. The <code>string.index()</code> function returns <code>null</code> if the string isn’t found and a number otherwise.</p>
+          </section>
+        </section>
+      </main>
+      <section class="external-links">
+        <ul>
+          <li><a target="_blank" href="https://sass-lang.com/install">Install</a></li>
+          <li><a target="_blank" href="https://sass-lang.com/blog">Blog</a></li>
+          <li><a target="_blank" href="https://sass-lang.com/guide">Learn Sass</a></li>
+        </ul>
+      </section>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
