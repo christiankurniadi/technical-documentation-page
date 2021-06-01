@@ -34,7 +34,7 @@ Technical documentation page made for FCC Responsive Web Design Projects
 
 - [x] **User Story #14:** On regular sized devices (laptops, desktops), the element with id="navbar" should be shown on the left side of the screen and should always be visible to the user.
 
-- [x] **User Story #15:**My Technical Documentation page should use at least one media query.
+- [x] **User Story #15:** My Technical Documentation page should use at least one media query.
 
 <br>
 
