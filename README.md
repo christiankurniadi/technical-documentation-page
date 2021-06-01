@@ -1,4 +1,4 @@
-# Product Landing Page
+# Technical Documentation Page
 
 Technical documentation page made for FCC Responsive Web Design Projects
 
