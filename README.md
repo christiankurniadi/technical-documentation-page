@@ -10,7 +10,7 @@ Technical documentation page made for FCC Responsive Web Design Projects
 
 - [x] **User Story #2:** Within the #main-doc element, I can see several section elements, each with a class of main-section. There should be a minimum of 5.
 
-- [x] **User Story #3:**The first element within each .main-section should be a header element which contains text that describes the topic of that section.
+- [x] **User Story #3:** The first element within each .main-section should be a header element which contains text that describes the topic of that section.
 
 - [x] **User Story #4:** Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "JavaScript and Java" should have a corresponding id="JavaScript_and_Java").
 
